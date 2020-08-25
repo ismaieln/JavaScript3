@@ -7,7 +7,7 @@
     // Create XHR Object
     const xhr = new XMLHttpRequest();
     // OPEN - type, url/file, async
-    xhr.open('GET', 'sample.txt', true);
+    xhr.open('GET', 'https://www.randomuser.me/api', true);
 
     console.log('READYSTATE: ', xhr.readyState);
 
@@ -21,6 +21,7 @@
       if (xhr.status === 200) {
         // console.log(this.responseText);
         document.getElementById('text').innerHTML = xhr.responseText;
+        console.log(xhr.responseText[0].name.title);
       } else if (this.status === 404) {
         document.getElementById('text').innerHTML = 'Not Found';
       }
