@@ -21,28 +21,39 @@
   </head>
   <body>
     <div class="container">
-      <section id="sam" class="sect">
+      <section id="sam" class="sect1">
+        <label for="sample">HYF Repositories</label>
+
+        <!-- select -->
         <select name="sample" id="firstRepo">
-          <option value="0">Ismaiel0</option>
-          <option value="1">Ismaiel1</option>
-          <option value="2">Ismaiel2</option>
+          <option value="" disabled selected>Choose Repository....</option>
+          <option value="0">SamleRepos</option>
+          <option value="1">AndAnotherOne</option>
+          <option value="2">HYF-Is-The-Best</option>
         </select>
+
+        <!--  second section -->
       </section>
-      <section id="anda" class="sect">
-        <select name="another" id="secondRepo">
-          <option value="0">Ismaiel0</option>
-          <option value="1">Ismaiel1</option>
-          <option value="2">Ismaiel2</option>
-        </select>
+      <section id="info" class="sect">
+        <h4 class="labels">Repository:</h4>
+        <p id="repo" class="labels"></p>
+        <h4 class="labels">Description:</h4>
+        <p id="desc" class="labels"></p>
+        <h4 class="labels">Forks:</h4>
+        <p id="fork" class="labels"></p>
+        <h4 class="labels">Updated:</h4>
+        <p id="upDate" class="labels"></p>
       </section>
       <section id="hyfi" class="sect">
-        <select name="hyfis" id="hyfIs">
-          <option value="0">Ismaiel0</option>
-          <option value="1">Ismaiel1</option>
-          <option value="2">Ismaiel2</option>
-        </select>
+        <h2>Contributors</h2>
+        <div>
+          <img src="" alt="" /><a href=""></a>
+          <div></div>
+        </div>
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

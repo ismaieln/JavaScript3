@@ -24,3 +24,26 @@ const placeholderRepos = [
     updated: '2020-05-27 12:00:00',
   },
 ];
+
+let repoName = document.getElementById('firstRepo');
+let repo = document.getElementById('repo');
+let description = document.getElementById('desc');
+let forks = document.getElementById('fork');
+let updated = document.getElementById('upDate');
+
+repoName.addEventListener('change', applyData);
+
+function applyData() {
+  repo.innerText = placeholderRepos[repoName.value].name;
+  description.innerText = placeholderRepos[repoName.value].description;
+  forks.innerText = placeholderRepos[repoName.value].forks;
+  updated.innerText = placeholderRepos[repoName.value].updated;
+}
+
+// useAxios();
+function useAxios() {
+  axios
+    .get('https://github.com/hackyourfuture')
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+}

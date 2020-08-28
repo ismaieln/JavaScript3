@@ -1,3 +1,52 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 80%;
+}
+#sam {
+  background-color: rgb(48, 17, 226);
+  color: white;
+  padding: 1em;
+  width: 100%;
+}
+
+#info {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  border: solid 0.3px rgb(155, 155, 155);
+  box-shadow: grey lightgray;
+  padding: 0.5em;
+}
+.sect {
+  width: 50%;
+}
+
+.labels {
+  margin: 0.3em 0;
+}
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 98%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    max-width: 100%;
+    font-size: 0.6em;
+  }
+}
