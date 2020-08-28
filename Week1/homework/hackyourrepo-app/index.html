@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="./hyf.png" />
+    <link rel="shortcut icon" type="image/png" href="./hyf.png" />
+    <title>HackYourRepo</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- First section -->
+        <header>
+          <label for="selectRepo">HYF Repositories</label>
+
+          <!-- select -->
+          <select name="selectRepo" id="selectRepo">
+            <option value="" disabled selected>Choose Repository....</option>
+            <option value="0">SamleRepos</option>
+            <option value="1">AndAnotherOne</option>
+            <option value="2">HYF-Is-The-Best</option>
+          </select>
+        </header>
+
+        <!--  second section -->
+        <section id="info" class="sect">
+          <h4 class="labels">Repository:</h4>
+          <p id="repo" class="labels"></p>
+          <h4 class="labels">Description:</h4>
+          <p id="desc" class="labels"></p>
+          <h4 class="labels">Forks:</h4>
+          <p id="fork" class="labels"></p>
+          <h4 class="labels">Updated:</h4>
+          <p id="upDate" class="labels"></p>
+        </section>
+
+        <!-- Third section -->
+        <section id="contributor" class="sect"></section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
