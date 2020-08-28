@@ -25,25 +25,26 @@ const placeholderRepos = [
   },
 ];
 
-let repoName = document.getElementById('firstRepo');
+// declaration of the required variables
+let selectRepo = document.getElementById('selectRepo');
 let repo = document.getElementById('repo');
 let description = document.getElementById('desc');
 let forks = document.getElementById('fork');
 let updated = document.getElementById('upDate');
+let contributor = document.getElementById('contributor');
 
-repoName.addEventListener('change', applyData);
+// Event Listener for select
+selectRepo.addEventListener('change', applyData);
+let outPut = '<div class="contributors">' + '<h2> Contributors</h2 ></div >';
+contributor.innerHTML = outPut;
 
+// the function apply data//
 function applyData() {
-  repo.innerText = placeholderRepos[repoName.value].name;
-  description.innerText = placeholderRepos[repoName.value].description;
-  forks.innerText = placeholderRepos[repoName.value].forks;
-  updated.innerText = placeholderRepos[repoName.value].updated;
-}
-
-// useAxios();
-function useAxios() {
-  axios
-    .get('https://github.com/hackyourfuture')
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
+  repo.innerText = placeholderRepos[selectRepo.value].name;
+  description.innerText = placeholderRepos[selectRepo.value].description;
+  forks.innerText = placeholderRepos[selectRepo.value].forks;
+  updated.innerText = placeholderRepos[selectRepo.value].updated;
+  outPut +=
+    '<div class="contributors"> <img src="https://avatars0.githubusercontent.com/u/13186712?v=4"  width="50px" /> <a  href="https://github.com/NoerGitKat" class="userName" target="_blank" >NoerGitKat</a> <div></div><div class="badge">8</div></div >';
+  contributor.innerHTML = outPut;
 }

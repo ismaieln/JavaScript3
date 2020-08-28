@@ -20,38 +20,37 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <section id="sam" class="sect1">
-        <label for="sample">HYF Repositories</label>
+    <main>
+      <div class="container">
+        <!-- First section -->
+        <header>
+          <label for="selectRepo">HYF Repositories</label>
 
-        <!-- select -->
-        <select name="sample" id="firstRepo">
-          <option value="" disabled selected>Choose Repository....</option>
-          <option value="0">SamleRepos</option>
-          <option value="1">AndAnotherOne</option>
-          <option value="2">HYF-Is-The-Best</option>
-        </select>
+          <!-- select -->
+          <select name="selectRepo" id="selectRepo">
+            <option value="" disabled selected>Choose Repository....</option>
+            <option value="0">SamleRepos</option>
+            <option value="1">AndAnotherOne</option>
+            <option value="2">HYF-Is-The-Best</option>
+          </select>
+        </header>
 
         <!--  second section -->
-      </section>
-      <section id="info" class="sect">
-        <h4 class="labels">Repository:</h4>
-        <p id="repo" class="labels"></p>
-        <h4 class="labels">Description:</h4>
-        <p id="desc" class="labels"></p>
-        <h4 class="labels">Forks:</h4>
-        <p id="fork" class="labels"></p>
-        <h4 class="labels">Updated:</h4>
-        <p id="upDate" class="labels"></p>
-      </section>
-      <section id="hyfi" class="sect">
-        <h2>Contributors</h2>
-        <div>
-          <img src="" alt="" /><a href=""></a>
-          <div></div>
-        </div>
-      </section>
-    </div>
+        <section id="info" class="sect">
+          <h4 class="labels">Repository:</h4>
+          <p id="repo" class="labels"></p>
+          <h4 class="labels">Description:</h4>
+          <p id="desc" class="labels"></p>
+          <h4 class="labels">Forks:</h4>
+          <p id="fork" class="labels"></p>
+          <h4 class="labels">Updated:</h4>
+          <p id="upDate" class="labels"></p>
+        </section>
+
+        <!-- Third section -->
+        <section id="contributor" class="sect"></section>
+      </div>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
