@@ -47,13 +47,18 @@ select {
   padding: 1.5em 0.5em;
   height: fit-content;
 }
+
+/* place holder */
+.placeH {
+  color: lightgray;
+  font-style: italic;
+}
 .sect {
   width: 49.7%;
 }
 
 .labels {
   padding: 0.2em 0.5em;
-  /* height: fit-content; */
 }
 
 /* Third section */

@@ -20,15 +20,17 @@ function main() {
   </header>  
   <section id="info" class="sect">
   <h4 class="labels">Repository:</h4>
-  <p id="repo" class="labels"></p>
+  <p id="repo" class="labels"><small class="placeH">Repository Name</small></p>
   <h4 class="labels">Description:</h4>
-  <p id="desc" class="labels"></p>
+  <p id="desc" class="labels"><small class="placeH">Description</small></p>
   <h4 class="labels">Forks:</h4>
-  <p id="fork" class="labels"></p>
+  <p id="fork" class="labels"><small class="placeH">Forks</small></p>
   <h4 class="labels">Updated:</h4>
-  <p id="upDate" class="labels"></p>
+  <p id="upDate" class="labels"><small class="placeH">2020-10-10 20:20:20</small></p>
   </section>
-  <section id="contributor" class="sect"></section>
+  <section id="contributor" class="sect"><div class="contributors">
+  <h2>Contributors</h2 >
+  </div ></section>
   </div ></main >`;
 
   // call the function to fetch data
@@ -90,10 +92,11 @@ function printData(res) {
   // Event Listener for select
   selectRepo.addEventListener('change', function() {
     //insert the information of the selected repo
-    let url_repo = `<a href="https://github.com/HackYourFuture/
-      ${res[this.value].name}" 
+    let url_repo = `<a href="https://github.com/HackYourFuture/${
+      res[this.value].name
+    }" 
       target="_blank">${res[this.value].name}</a>`;
-
+    console.log(url_repo);
     // to print the date format in nice way // it is long code but at the time been it works.
     let dat = res[this.value].updated_at.split('T');
     let tim = dat[1].slice(0, dat[1].length - 1);
