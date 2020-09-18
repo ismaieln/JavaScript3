@@ -26,12 +26,12 @@ const placeholderRepos = [
 ];
 
 // declaration of the required variables
-let selectRepo = document.getElementById('selectRepo');
-let repo = document.getElementById('repo');
-let description = document.getElementById('desc');
-let forks = document.getElementById('fork');
-let updated = document.getElementById('upDate');
-let contributor = document.getElementById('contributor');
+const selectRepo = document.getElementById('selectRepo');
+const repo = document.getElementById('repo');
+const description = document.getElementById('desc');
+const forks = document.getElementById('fork');
+const updated = document.getElementById('upDate');
+const contributor = document.getElementById('contributor');
 
 // Event Listener for select
 selectRepo.addEventListener('change', applyData);
