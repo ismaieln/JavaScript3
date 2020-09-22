@@ -17,7 +17,7 @@ function main() {
   <main><div class="container" >
   <header>HYF Repositories
   <select name="selectRepo" id="selectRepo"></select>
-  </header>  
+  </header> 
   <section id="info" class="sect">
   <h4 class="labels">Repository:</h4>
   <p id="repo" class="labels"><small class="placeH">Repository Name</small></p>
@@ -41,7 +41,7 @@ function main() {
 function printError(err) {
   document.body.innerHTML = `
   <main><div class="container" >
-  <header>HYF Repositories  
+  <header>HYF Repositories
   </header>
   <div id="errorMessage">${err}</div >
   </main >`;
@@ -56,9 +56,9 @@ async function getData(url) {
 
 // sort the data alphabetical
 function toSortData(res) {
-  let newRes = res.sort((a, b) => {
-    let aA = a.name.toUpperCase();
-    let bB = b.name.toUpperCase();
+  return res.sort((a, b) => {
+    const aA = a.name.toUpperCase();
+    const bB = b.name.toUpperCase();
     if (aA < bB) {
       return -1;
     }
@@ -67,7 +67,6 @@ function toSortData(res) {
     }
     return 0;
   });
-  return newRes;
 }
 
 // Function to print the options in the select (list)
@@ -79,7 +78,7 @@ function printData(res) {
   const forks = document.getElementById('fork');
   const updated = document.getElementById('upDate');
 
-  let names = toSortData(res);
+  const names = toSortData(res);
   let selectOptions =
     '<option value="" disabled selected>Choose Repository....</option>';
   for (let i = 0; i < res.length; i++) {
@@ -98,12 +97,12 @@ function printData(res) {
       target="_blank">${res[this.value].name}</a>`;
     console.log(url_repo);
     // to print the date format in nice way // it is long code but at the time been it works.
-    let dat = res[this.value].updated_at.split('T');
-    let tim = dat[1].slice(0, dat[1].length - 1);
+    let aDate = res[this.value].updated_at.split('T');
+    let aTime = aDate[1].slice(0, aDate[1].length - 1);
     repo.innerHTML = url_repo;
     description.innerText = res[this.value].description;
     forks.innerText = res[this.value].forks;
-    updated.innerText = dat[0] + '  ' + tim;
+    updated.innerText = aDate[0] + '  ' + aTime;
 
     // identify the url for the contributors
     let urlCont =
@@ -120,7 +119,8 @@ function printData(res) {
 
 // the function to get the contributors
 async function getTheContributors(urlC) {
-  await axios.get(urlC).then(respon => printTheContributors(respon));
+  const response = await axios.get(urlC);
+  printTheContributors(response);
 }
 
 // the function to print the contributors

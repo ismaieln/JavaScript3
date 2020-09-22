@@ -5,13 +5,16 @@ function main() {
   // insert the basic DOM
   document.body.innerHTML = `
   <div class="container">
-  <div class="card"><button id="getPokemon">Get Pokemon</button></div>
+  <div class="card">
+  <button id="getPokemon">Get Pokemon</button>
+  </div>
   <div class="pokemonContainer card"></div>
-  <div class="pokemonImage card"></div></div>`;
+  <div class="pokemonImage card"></div>
+  </div>`;
 
   // declare the variables
-  let pokemonContainer = document.querySelector('.pokemonContainer');
-  let getPokemon = document.getElementById('getPokemon');
+  const pokemonContainer = document.querySelector('.pokemonContainer');
+  const getPokemon = document.getElementById('getPokemon');
   getPokemon.addEventListener('click', fetchData);
 
   // The function fetch Data
@@ -22,7 +25,7 @@ function main() {
         let pokemonName = resData.results;
         pokemonContainer.innerHTML =
           '<select name="choice" id="pokemon"></select>';
-        let pokemon = document.getElementById('pokemon');
+        const pokemon = document.getElementById('pokemon');
 
         // Inject pokemon names in the list
         let options = '';
@@ -56,8 +59,8 @@ function main() {
     axios
       .get(info)
       .then(respon => {
-        let pokemonImage = document.querySelector('.pokemonImage');
-        pokemonImage.innerHTML = `'<img src="${respon.data.sprites.front_default}" alt="pokemon" width=120>`;
+        const pokemonImage = document.querySelector('.pokemonImage');
+        pokemonImage.innerHTML = `<img src="${respon.data.sprites.front_default}" alt="pokemon" width=120>`;
       })
       .catch(err => console.log(err));
   }
