@@ -1,16 +1,16 @@
 // to select the active page
-function selectPage(pages, num, btn, store) {
-  const contributor = document.getElementById('contributors_page');
-  for (ii = 0; ii < btn.length; ii++) {
-    if (btn[ii].innerHTML == num + 1) {
-      btn[ii].classList.add('active');
-      store.innerHTML = ii;
+export function selectPage(pages, num, btn, store) {
+  const contributor = document.getElementById('contributorsPage');
+  for (let i = 0; i < btn.length; i++) {
+    if (btn[i].innerHTML == num + 1) {
+      btn[i].classList.add('active');
+      store.innerHTML = i;
     } else {
-      btn[ii].classList.remove('active');
+      btn[i].classList.remove('active');
     }
   }
   let outPut = '';
-  if (pages.length != 0) {
+  if (pages.length !== 0) {
     pages[num].forEach(element => {
       outPut += `
       <div class="contributors">

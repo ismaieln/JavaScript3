@@ -1,13 +1,14 @@
+import { selectPage } from './selectPage.js';
 // This is for page right and left
-function clickRightLeft(f, btn, store, pages) {
+export function clickRightLeft(f, buttons, store, pages) {
   let sto = store.innerHTML;
-  let page_number = btn[sto].innerHTML;
+  let pageNumber = buttons[sto].innerHTML;
 
-  if (f && sto < btn.length - 1) {
+  if (f && sto < buttons.length - 1) {
     sto++;
-    selectPage(pages, sto, btn, store);
+    selectPage(pages, sto, buttons, store);
   } else if (!f && sto >= 1) {
     sto--;
-    selectPage(pages, sto, btn, store);
+    selectPage(pages, sto, buttons, store);
   }
 }

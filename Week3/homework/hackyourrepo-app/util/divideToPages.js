@@ -1,8 +1,8 @@
 //to divide the contributors to pages
-function divideToPages(resData, page_count) {
+export function divideToPages(resData, pageCount) {
   let start = 0;
   let pages = [];
-  for (y = 0; y < page_count; y++) {
+  for (let i = 0; i < pageCount; i++) {
     pages.push(resData.slice(start, start + 5));
     start += 5;
   }

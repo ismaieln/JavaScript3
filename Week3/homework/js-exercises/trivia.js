@@ -9,38 +9,40 @@ window.onload = () => {
 };
 
 // to fetch the data
-let getData = async function(url) {
-  let response = await fetch(url);
-  let json = await response.json();
+const getData = async function(url) {
+  const response = await fetch(url);
+  const json = await response.json();
   return json.results;
 };
 
 //  to fetch the quotes
-let getQuote = async function() {
-  let quotes = await getData(' https://opentdb.com/api.php?amount=5');
+const getQuote = async function() {
+  const quotes = await getData(' https://opentdb.com/api.php?amount=5');
   const divOfQuote = document.getElementById('quote');
   let output = '';
   for (quote of quotes) {
-    output += `<div class="count"><p class="flag">0</p><p class="question">${quote.question}</p>
-    <p class="answer">${quote.correct_answer}</p></div>`;
+    output += `<p title="Click to show the answer!" class="question">${quote.question}</p>
+    <p class="answer">${quote.correct_answer}</p>`;
   }
   // append the quotes to the page
   divOfQuote.innerHTML = output;
 
-  let count = document.querySelectorAll('.count');
+  const question = document.querySelectorAll('.question');
+  const answer = document.querySelectorAll('.answer');
 
-  for (elem of count) {
-    elem.addEventListener('click', function() {
-      let first = this.firstElementChild;
-      let last = this.lastElementChild;
-      if (first.innerHTML == 0) {
+  for (let i = 0; i <= question.length; i++) {
+    question[i].addEventListener('click', function() {
+      // const first = this.firstElementChild;
+      // // first.addAttribute = 'title';
+      // const last = this.lastElementChild;
+      if (this.title == 'Click to show the answer!') {
         this.classList.add('active');
-        first.innerHTML = 1;
-        last.style.display = 'block';
+        this.title = 'Click to hide the answer!';
+        answer[i].style.display = 'block';
       } else {
         this.classList.remove('active');
-        first.innerHTML = 0;
-        last.style.display = 'none';
+        this.title = 'Click to show the answer!';
+        answer[i].style.display = 'none';
       }
     });
   }

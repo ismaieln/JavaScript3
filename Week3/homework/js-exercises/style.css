@@ -18,29 +18,20 @@
   padding: 0.5em;
 }
 
-.count {
-  background-color: rgb(196, 192, 192);
-}
-
 .answer {
   padding: 1em;
   display: none;
-  background-color: white;
 }
 
 .question {
   padding: 1em;
+  background-color: rgb(196, 192, 192);
 }
 
 .question:hover {
   cursor: pointer;
   background-color: rgb(158, 153, 153);
   transition: 200ms;
-}
-
-/* this only for control */
-.flag {
-  display: none;
 }
 
 .active {

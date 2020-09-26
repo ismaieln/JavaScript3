@@ -6,34 +6,40 @@
 
 // And they lived happily ever after!
 
-class Person {
-  constructor(name, age, kind, city, wife, children) {
+class Creature {
+  constructor(name, age, kind, job) {
     this.name = name;
     this.age = age;
     this.kind = kind;
-
-    this.city = city;
-    this.wife = wife;
-    this.children = children;
+    this.job = job;
   }
-
   get info() {
     return `${this.name} is a ${this.age} years old ${this.kind},`;
   }
+}
+
+//////////////
+class Person extends Creature {
+  constructor(name, age, kind, job, city, partner, children) {
+    super(name, age, kind, job);
+    this.city = city;
+    this.partner = partner;
+    this.children = children;
+  }
+
   get doSo() {
-    return `${this.info} lives in ${this.city}. He ${this.wife} and ${this.children} childeren ${this.name} is a construction worker, that makes houses he likes to eat dates and smoke water pipe.`;
+    return `${this.info} lives in ${this.city}. He ${this.partner} and ${this.children} childeren ${this.name} is a ${this.job}`;
   }
 }
 
-class Animal extends Person {
-  constructor(name, age, kind, color) {
-    super(name, age, kind);
+///////////////
+class Animal extends Creature {
+  constructor(name, age, kind, job, color) {
+    super(name, age, kind, job);
     this.color = color;
   }
   get doSo() {
-    return `${super.info} and has a color ${
-      this.color
-    }, Usually eats grass or helps transport materials for Abdulkareem.`;
+    return `${this.info} and has a color ${this.color},${this.job}`;
   }
 }
 
@@ -41,12 +47,19 @@ let abdulkareem = new Person(
   'Abdulkareem',
   35,
   'man',
+  'construction worker, that makes houses he likes to eat dates and smoke water pipe.',
   'Riyadh',
   'has a wife',
   3,
 );
 
-let adel = new Animal('Adel', 15, 'horse', 'brown');
+let adel = new Animal(
+  'Adel',
+  15,
+  'horse',
+  ' Usually eats grass or helps transport materials for Abdulkareem.',
+  'brown',
+);
 
 console.log(
   `${abdulkareem.doSo}

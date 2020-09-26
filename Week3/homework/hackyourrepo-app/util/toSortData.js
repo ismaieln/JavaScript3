@@ -1,8 +1,9 @@
 // sort the data alphabetical
-function toSortData(res) {
-  let newRes = res.sort((a, b) => {
-    let aA = a.name.toUpperCase();
-    let bB = b.name.toUpperCase();
+export function toSortData(res) {
+  let newRes;
+  return (newRes = res.sort((a, b) => {
+    const aA = a.name.toUpperCase();
+    const bB = b.name.toUpperCase();
     if (aA < bB) {
       return -1;
     }
@@ -10,6 +11,5 @@ function toSortData(res) {
       return 1;
     }
     return 0;
-  });
-  return newRes;
+  }));
 }
